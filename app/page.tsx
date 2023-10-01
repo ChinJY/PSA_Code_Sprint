@@ -90,7 +90,7 @@ export default function Home() {
         setLoadingVisible(false);
         retrieveFromDynamo();
       }
-    }, 229); // Update every 100ms
+    }, 350); // Update every 100ms
   };
 
   const clickFunction = () => {
