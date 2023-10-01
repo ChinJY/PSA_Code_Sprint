@@ -110,7 +110,7 @@ export default function Home() {
         <input
             className="input-field"
             type="text"
-            // placeholder="https://www.marineinsight.com/shipping-news/"
+            placeholder="https://www.marineinsight.com/shipping-news/"
             value={userInput} // Step 4: Bind input field to state
             onChange={(e) => setUserInput(e.target.value)} // Step 4: Update state on input change
         />
