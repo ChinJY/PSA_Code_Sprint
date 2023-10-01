@@ -167,9 +167,9 @@ a {
 }
 
 .input-field {
-  border-radius: 10px; /* Adjust the value to control the roundness of borders */
+  border-radius: 10px;
   font-size: .875rem;
-  padding: 10px; /* Add padding for better spacing */
+  padding: 10px;
   border: none;
   width: 500px;
   text-align: center;

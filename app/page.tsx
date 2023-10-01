@@ -83,7 +83,7 @@ export default function Home() {
     setLoadingVisible(true);
     let percent = 0;
     const interval = setInterval(() => {
-      percent += (100 / 60); // Increment by (100 / 13) for 13 seconds animation
+      percent += (100 / 60);
       setLoadingPercent(Math.min(percent, 100));
       if (percent >= 100) {
         clearInterval(interval);
@@ -111,8 +111,8 @@ export default function Home() {
             className="input-field"
             type="text"
             placeholder="https://www.marineinsight.com/shipping-news/"
-            value={userInput} // Step 4: Bind input field to state
-            onChange={(e) => setUserInput(e.target.value)} // Step 4: Update state on input change
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
         />
       </div>
       <div className="center-button">
