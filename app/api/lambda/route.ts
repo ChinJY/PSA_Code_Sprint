@@ -10,8 +10,10 @@ AWS.config.update({
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
-    console.log("Lambda API route started");
-    const payload = await req.json;
+    console.log("Lambda API route started.");
+    const payload = await req.json();
+    const payloadString = payload.userInput
+    console.log(payloadString);
     const lambdaArn = 'arn:aws:lambda:'+AWS.config.region+':'+'646415789532'+':function:PSA_lambda';
     const lambda = new AWS.Lambda(); // Create a Lambda instance
 
@@ -28,13 +30,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
             {
               FunctionName: lambdaArn,
               InvocationType: 'RequestResponse',
-              Payload: JSON.stringify(payload),
+              Payload: JSON.stringify(payloadString),
             },
             (err, data) => {
               if (err) {
-                // console.error('Error invoking Lambda (2):', err);
+                console.error('Error invoking Lambda (2):', err);
               } else{
-                // console.log('Lambda Success:', data);
+                console.log('Lambda Success:', data);
               }
             }
           );

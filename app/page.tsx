@@ -15,12 +15,13 @@ export default function Home() {
   const [reaasoningList, setReasoning] = useState<ListType>([]);
   const [loadingPercent, setLoadingPercent] = useState(0);
   const [loadingVisible, setLoadingVisible] = useState(false);
+  const [userInput, setUserInput] = useState('');
 
   const invokeLambda = async () => {
     let { data } = await axios.post(
       "/api/lambda",
       {
-        
+       userInput, 
       },
       {
         headers: {
@@ -28,7 +29,7 @@ export default function Home() {
         },
       }
     );
-    console.log('Lambda Response:', data);
+    // console.log('Lambda Response:', data);
   }
 
   const retrieveFromDynamo = async () => {
@@ -57,8 +58,8 @@ export default function Home() {
         <thead>
           <tr>
             <th>Source</th>
-            <th>Area</th>
-            <th>Risk</th>
+            <th>Affected Region</th>
+            <th>Risk (1 = Lowest Risk, 5 = Highest Risk)</th>
             <th>Risk Categories</th>
             <th>Reasoning</th>
           </tr>
@@ -104,7 +105,16 @@ export default function Home() {
 
   return (
     <div>
-      <h3 className='h3Class'>Click the button to obtain the latest insights</h3>
+      <h3 className='h3Class'>Click the button to obtain the latest insights, or paste a link from "https://www.marineinsight.com/shipping-news/" into the box below before pressing the button to generate insights from a custom article (No insights will appear if the article is not relevant to shipping).</h3>
+      <div className="input-div">
+        <input
+            className="input-field"
+            type="text"
+            // placeholder="https://www.marineinsight.com/shipping-news/"
+            value={userInput} // Step 4: Bind input field to state
+            onChange={(e) => setUserInput(e.target.value)} // Step 4: Update state on input change
+        />
+      </div>
       <div className="center-button">
         <button className="buttonClass" onClick={clickFunction}>Generate Insights</button>
       </div>

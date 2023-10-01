@@ -126,6 +126,9 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-align: center;
 }
 
 .center-button {
@@ -157,7 +160,20 @@ a {
   background-color: #333;
 }
 
+.input-div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
 
+.input-field {
+  border-radius: 10px; /* Adjust the value to control the roundness of borders */
+  font-size: .875rem;
+  padding: 10px; /* Add padding for better spacing */
+  border: none;
+  width: 500px;
+  text-align: center;
+}
 
 
 
