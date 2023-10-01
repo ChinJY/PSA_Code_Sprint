@@ -105,7 +105,7 @@ export default function Home() {
 
   return (
     <div>
-      <h3 className='h3Class'>Click the button to obtain the latest insights, or paste a link from "https://www.marineinsight.com/shipping-news/" into the box below before pressing the button to generate insights from a custom article (No insights will appear if the article is not relevant to shipping).</h3>
+      <h3 className='h3Class'>Click the button to obtain the latest insights, or paste a link from &quot;https://www.marineinsight.com/shipping-news/&quot; into the box below before pressing the button to generate insights from a custom article (No insights will appear if the article is not relevant to shipping).</h3>
       <div className="input-div">
         <input
             className="input-field"
