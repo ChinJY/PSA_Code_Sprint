@@ -10,7 +10,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   try {
     // Retrieve data from dynamoDB
     const command = new ScanCommand({
-      TableName: "PSA_hackathon",
+      TableName: "PSA_hackathon_2",
     });
     const response = await docClient.send(command);
     const responseItem = response.Items; // store dynamoDB response in reponseItem
